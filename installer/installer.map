@@ -1,0 +1,195 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+memcpy              0x8               build/ps4.o
+sock                0x4               build/main.o
+sceSysUtilSendSystemNotificationWithText
+                    0x8               build/ps4.o
+__error             0x8               build/ps4.o
+sceKernelLoadStartModule
+                    0x8               build/ps4.o
+memset              0x8               build/ps4.o
+sprintf             0x8               build/ps4.o
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 /tmp/ccYEBYo3.o
+ .bss           0x0000000000000000        0x0 /tmp/ccYEBYo3.o
+ .data          0x0000000000000000        0x0 /tmp/cck6HYeh.o
+ .bss           0x0000000000000000        0x0 /tmp/cck6HYeh.o
+ .text          0x0000000000000000        0x0 build/ddebug.o
+ .data          0x0000000000000000        0x0 build/ddebug.o
+ .bss           0x0000000000000000        0x0 build/ddebug.o
+ .comment       0x0000000000000000       0x2a build/ddebug.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/ddebug.o
+ .text          0x0000000000000000        0x0 build/embed.o
+ .data          0x0000000000000000        0x0 build/embed.o
+ .bss           0x0000000000000000        0x0 build/embed.o
+ .text          0x0000000000000000        0x0 build/main.o
+ .data          0x0000000000000000        0x0 build/main.o
+ .bss           0x0000000000000000        0x0 build/main.o
+ .comment       0x0000000000000000       0x2a build/main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/main.o
+ .eh_frame      0x0000000000000000       0xc0 build/main.o
+ COMMON         0x0000000000000000        0x4 build/main.o
+ .data          0x0000000000000000        0x0 build/ps4.o
+ .bss           0x0000000000000000        0x0 build/ps4.o
+ .comment       0x0000000000000000       0x2a build/ps4.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/ps4.o
+ .eh_frame      0x0000000000000000       0x88 build/ps4.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccYEBYo3.o
+LOAD /tmp/cck6HYeh.o
+LOAD build/ddebug.o
+LOAD build/embed.o
+LOAD build/main.o
+LOAD build/ps4.o
+
+.text           0x0000000000000000      0x3f6
+ *(.text.start)
+ *(.text*)
+ .text          0x0000000000000000        0x5 /tmp/ccYEBYo3.o
+                0x0000000000000000                _start
+ .text          0x0000000000000005       0x2e /tmp/cck6HYeh.o
+                0x0000000000000005                syscall
+                0x0000000000000008                syscall_macro
+ .text.install_payload
+                0x0000000000000033      0x18d build/main.o
+                0x0000000000000033                install_payload
+ .text.notify   0x00000000000001c0       0x37 build/main.o
+                0x00000000000001c0                notify
+ .text._main    0x00000000000001f7       0xa5 build/main.o
+                0x00000000000001f7                _main
+ .text          0x000000000000029c       0x30 build/ps4.o
+                0x000000000000029c                unlink
+                0x00000000000002a8                kexec
+                0x00000000000002b4                mkdir
+                0x00000000000002c0                getFunctionAddressByName
+ .text.loadModule
+                0x00000000000002cc       0x1d build/ps4.o
+                0x00000000000002cc                loadModule
+ .text.initKernel
+                0x00000000000002e9       0x7e build/ps4.o
+                0x00000000000002e9                initKernel
+ .text.initLibc
+                0x0000000000000367       0x5c build/ps4.o
+                0x0000000000000367                initLibc
+ .text.initSysUtil
+                0x00000000000003c3       0x33 build/ps4.o
+                0x00000000000003c3                initSysUtil
+
+.plt            0x0000000000000400        0x0
+ .plt           0x0000000000000400        0x0 /tmp/ccYEBYo3.o
+
+.plt.got        0x00000000000003f8        0x0
+ .plt.got       0x00000000000003f8        0x0 /tmp/ccYEBYo3.o
+
+.rodata         0x00000000000003f8     0x2175
+ *(.rodata)
+ .rodata        0x00000000000003f8     0x204c build/embed.o
+                0x00000000000003f8                kpayload
+                0x0000000000002440                kpayload_size
+ *(.rodata*)
+ .rodata.install_payload.str1.1
+                0x0000000000002444        0x7 build/main.o
+ .rodata.notify.str1.1
+                0x000000000000244b        0x3 build/main.o
+ .rodata._main.str1.1
+                0x000000000000244e       0x4c build/main.o
+ .rodata.initKernel.str1.1
+                0x000000000000249a       0x56 build/ps4.o
+ .rodata.initLibc.str1.1
+                0x00000000000024f0       0x2e build/ps4.o
+ .rodata.initSysUtil.str1.1
+                0x000000000000251e       0x4f build/ps4.o
+
+.gnu.version_d  0x0000000000002570        0x0
+ .gnu.version_d
+                0x0000000000002570        0x0 /tmp/ccYEBYo3.o
+
+.gnu.version    0x000000000000256e        0x0
+ .gnu.version   0x000000000000256e        0x0 /tmp/ccYEBYo3.o
+
+.gnu.version_r  0x0000000000002570        0x0
+ .gnu.version_r
+                0x0000000000002570        0x0 /tmp/ccYEBYo3.o
+
+.dynsym         0x0000000000002570       0x18
+ .dynsym        0x0000000000002570       0x18 /tmp/ccYEBYo3.o
+
+.dynstr         0x0000000000002588        0x1
+ .dynstr        0x0000000000002588        0x1 /tmp/ccYEBYo3.o
+
+.gnu.hash       0x0000000000002590       0x1c
+ .gnu.hash      0x0000000000002590       0x1c /tmp/ccYEBYo3.o
+
+.eh_frame_hdr   0x00000000000025ac        0x0
+ .eh_frame_hdr  0x00000000000025ac        0x0 build/main.o
+
+.rela.dyn       0x00000000000025b0        0x0
+ .rela.plt      0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.got      0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.bss      0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.data.rel.ro
+                0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.ifunc    0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.text     0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.text.install_payload
+                0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.text.notify
+                0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.text._main
+                0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.text.initKernel
+                0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.text.initLibc
+                0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+ .rela.text.initSysUtil
+                0x00000000000025b0        0x0 /tmp/ccYEBYo3.o
+
+.data
+ *(.data)
+
+.dynamic        0x00000000000025b0       0xe0
+ .dynamic       0x00000000000025b0       0xe0 /tmp/ccYEBYo3.o
+                0x00000000000025b0                _DYNAMIC
+
+.got            0x0000000000002690        0x0
+ .got           0x0000000000002690        0x0 /tmp/ccYEBYo3.o
+
+.got.plt        0x0000000000002690        0x0
+ .got.plt       0x0000000000002690        0x0 /tmp/ccYEBYo3.o
+
+.data.rel.ro    0x0000000000002690        0x0
+ .data.rel.ro   0x0000000000002690        0x0 /tmp/ccYEBYo3.o
+
+.bss            0x0000000000002690       0x30
+ *(.bss)
+ COMMON         0x0000000000002690       0x30 build/ps4.o
+                0x0000000000002690                memcpy
+                0x0000000000002698                sceSysUtilSendSystemNotificationWithText
+                0x00000000000026a0                __error
+                0x00000000000026a8                sceKernelLoadStartModule
+                0x00000000000026b0                memset
+                0x00000000000026b8                sprintf
+
+.dynbss         0x00000000000026c0        0x0
+ .dynbss        0x00000000000026c0        0x0 /tmp/ccYEBYo3.o
+
+/DISCARD/
+ *(.comment)
+ *(.note.GNU-stack)
+ *(.eh_frame)
+ *(.interp)
+OUTPUT(temp.t elf64-x86-64)

@@ -1,0 +1,172 @@
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 build/fpkg.o
+ .comment       0x0000000000000000       0x2a build/fpkg.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/fpkg.o
+ .eh_frame      0x0000000000000000      0x1b8 build/fpkg.o
+ .text          0x0000000000000000        0x0 build/fself.o
+ .comment       0x0000000000000000       0x2a build/fself.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/fself.o
+ .eh_frame      0x0000000000000000      0x158 build/fself.o
+ .text          0x0000000000000000       0xce build/hooks.o
+ .comment       0x0000000000000000       0x2a build/hooks.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/hooks.o
+ .eh_frame      0x0000000000000000      0x1c8 build/hooks.o
+ .text          0x0000000000000000        0x3 build/main.o
+ .comment       0x0000000000000000       0x2a build/main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/main.o
+ .eh_frame      0x0000000000000000       0x58 build/main.o
+ .text          0x0000000000000000        0x0 build/patch.o
+ .comment       0x0000000000000000       0x2a build/patch.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/patch.o
+ .eh_frame      0x0000000000000000      0x220 build/patch.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/fpkg.o
+LOAD build/fself.o
+LOAD build/hooks.o
+LOAD build/main.o
+LOAD build/patch.o
+                0x0000000000000000                . = 0x0
+
+.payload_header
+                0x0000000000000000       0x10
+ *(.payload_header)
+ .payload_header
+                0x0000000000000000       0x10 build/main.o
+                0x0000000000000000                payload_header
+
+.payload_code   0x0000000000000010     0x1b66
+ *(.payload_code)
+ .payload_code  0x0000000000000010      0x6f2 build/fpkg.o
+                0x0000000000000010                my_sceSblKeymgrSetKeyStorage__sceSblDriverSendMsg
+                0x00000000000000ff                my_mountpfs__sceSblPfsSetKeys
+                0x0000000000000578                my_sceSblKeymgrSmCallfunc_npdrm_decrypt_rif_new
+                0x0000000000000608                my_sceSblKeymgrSmCallfunc_npdrm_decrypt_isolated_rif
+                0x0000000000000657                install_fpkg_hooks
+ .payload_code  0x0000000000000702      0x574 build/fself.o
+                0x000000000000071f                my_sceSblAuthMgrIsLoadable__sceSblACMgrGetPathId
+                0x000000000000079a                my_sceSblAuthMgrVerifyHeader
+                0x00000000000008a1                my_sceSblAuthMgrSmLoadSelfSegment__sceSblServiceMailbox
+                0x00000000000008f2                my_sceSblAuthMgrIsLoadable2
+                0x0000000000000a87                my_sceSblAuthMgrSmLoadSelfBlock__sceSblServiceMailbox
+                0x0000000000000bcb                install_fself_hooks
+ .payload_code  0x0000000000000c76      0x3b4 build/hooks.o
+                0x0000000000000c76                sys_proc_list
+                0x0000000000000d14                proc_find_by_pid
+                0x0000000000000d2f                proc_rw_mem
+                0x0000000000000e1b                sys_proc_rw
+                0x0000000000000e5a                install_syscall
+                0x0000000000000e95                sys_proc_vm_map_handle
+                0x0000000000000f9d                sys_proc_cmd
+                0x0000000000000fd6                install_syscall_hooks
+ .payload_code  0x000000000000102a      0x2ba build/main.o
+                0x000000000000102a                resolve_kdlsym
+                0x00000000000012bf                my_entrypoint
+ .payload_code  0x00000000000012e4      0x892 build/patch.o
+                0x0000000000001535                shellcore_fpkg_patch
+                0x00000000000017c0                shellui_patch
+                0x00000000000019bb                remoteplay_patch
+                0x0000000000001ab4                apply_patches
+                0x0000000000001ac5                set_dipsw
+                0x0000000000001b23                restore_retail_dipsw
+                0x0000000000001b27                patch_debug_dipsw
+                0x0000000000001b2e                install_patches
+
+.payload_data   0x0000000000001b80      0x4c6
+ *(.payload_rdata .rodata*)
+ .payload_rdata
+                0x0000000000001b80      0x2a0 build/fpkg.o
+ .rodata.str1.1
+                0x0000000000001e20        0xc build/fself.o
+ *fill*         0x0000000000001e2c       0x14 
+ .payload_rdata
+                0x0000000000001e40      0x128 build/fself.o
+ .rodata.str1.1
+                0x0000000000001f68       0x97 build/patch.o
+ *fill*         0x0000000000001fff        0x1 
+ .rodata        0x0000000000002000       0x46 build/patch.o
+ *(.payload_data)
+
+.payload_bss    0x0000000000002048      0x170
+ *(.payload_bss)
+ .payload_bss   0x0000000000002048      0x170 build/main.o
+                0x0000000000002048                proc_rwmem
+                0x0000000000002050                vm_map_lookup_entry
+                0x0000000000002058                vm_map_unlock_read
+                0x0000000000002060                vm_map_lock_read
+                0x0000000000002068                vmspace_free
+                0x0000000000002070                vmspace_acquire_ref
+                0x0000000000002078                sceSblKeymgrSmCallfunc
+                0x0000000000002080                sceSblKeymgrCleartKey
+                0x0000000000002088                sceSblKeymgrSetKeyForPfs
+                0x0000000000002090                sceSblKeymgrSetKeyStorage
+                0x0000000000002098                sceSblPfsSetKeys
+                0x00000000000020a0                sceSblDriverSendMsg_0
+                0x00000000000020a8                AesCbcCfb128Decrypt
+                0x00000000000020b0                AesCbcCfb128Encrypt
+                0x00000000000020b8                Sha256Hmac
+                0x00000000000020c0                RsaesPkcs1v15Dec2048CRT
+                0x00000000000020c8                sceSblAuthMgrVerifyHeader
+                0x00000000000020d0                _sceSblAuthMgrSmStart
+                0x00000000000020d8                _sceSblAuthMgrGetSelfInfo
+                0x00000000000020e0                sceSblAuthMgrSmIsLoadable2
+                0x00000000000020e8                sceSblServiceMailbox
+                0x00000000000020f0                sceSblACMgrGetPathId
+                0x00000000000020f8                SYSENT
+                0x0000000000002100                FPU_CTX
+                0x0000000000002108                SBL_KEYMGR_BUF_GVA
+                0x0000000000002110                SBL_KEYMGR_BUF_VA
+                0x0000000000002118                SBL_KEYMGR_KEY_RBTREE
+                0x0000000000002120                SBL_KEYMGR_KEY_SLOTS
+                0x0000000000002128                SBL_PFS_SX
+                0x0000000000002130                SBL_DRIVER_MAPPED_PAGES
+                0x0000000000002138                ALLPROC
+                0x0000000000002140                MINI_SYSCORE_SELF_BINARY
+                0x0000000000002148                M_TEMP
+                0x0000000000002150                eventhandler_register
+                0x0000000000002158                printf
+                0x0000000000002160                strlen
+                0x0000000000002168                memset
+                0x0000000000002170                memcpy
+                0x0000000000002178                fpu_kern_leave
+                0x0000000000002180                fpu_kern_enter
+                0x0000000000002188                strstr
+                0x0000000000002190                free
+                0x0000000000002198                malloc
+                0x00000000000021a0                _sx_xunlock
+                0x00000000000021a8                _sx_xlock
+                0x00000000000021b0                memcmp
+                0x0000000000100000                . = 0x100000
+
+.data           0x0000000000100000        0x0
+ *(.data)
+ .data          0x0000000000100000        0x0 build/fpkg.o
+ .data          0x0000000000100000        0x0 build/fself.o
+ .data          0x0000000000100000        0x0 build/hooks.o
+ .data          0x0000000000100000        0x0 build/main.o
+ .data          0x0000000000100000        0x0 build/patch.o
+
+.bss            0x0000000000100000        0x0
+ *(.bss)
+ .bss           0x0000000000100000        0x0 build/fpkg.o
+ .bss           0x0000000000100000        0x0 build/fself.o
+ .bss           0x0000000000100000        0x0 build/hooks.o
+ .bss           0x0000000000100000        0x0 build/main.o
+ .bss           0x0000000000100000        0x0 build/patch.o
+
+/DISCARD/
+ *(*)
+OUTPUT(temp.t elf64-x86-64)
