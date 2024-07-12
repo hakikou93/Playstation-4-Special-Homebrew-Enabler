@@ -2,11 +2,11 @@
 
  PS4 HEN v1.0b14 Coded By Karf5
 
-## This Project Is Based On HEN-VTX Source Code But I Added More Features And Improved It's Stability And More Updates Will Be In Future
+ This Project Is Based On HEN-VTX Source Code But I Added More Features And Improved It's Stability And More Updates Will Be In Future
 
-## Supported Firmwares
-## 11.00
-## 9.00
+ Supported Firmwares
+ 11.00
+ 9.00
 
 ## The Features
 - Homebrew Enabler
