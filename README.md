@@ -23,7 +23,7 @@
 - UART Enabler
 - Never Disable Screenshot
 - Remote Play Enabler
-- Block System Updates
+- Block System Updates ( Added By Karf5 )
 
 
 
