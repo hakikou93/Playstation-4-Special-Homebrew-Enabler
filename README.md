@@ -4,7 +4,7 @@
 
  This Project Is Based On HEN-VTX Source Code But I Added More Features And Improved It's Stability And More Updates Will Be In Future
 
- Supported Firmwares
+ Supported Firmwares : 
  7.0x To 11.00
 
 ## The Features
