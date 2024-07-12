@@ -33,6 +33,7 @@ Compile the payloads:
 ```sh
 ./build.sh 900
 ```
+For other firmwares, for example FW 11.00, `./build.sh 1100`.
 
 ## Special Thanks To Those Developers Who Made The Port For HEN-VTX To Work On All Versions
 - [EchoStrech](https://twitter.com/EchoStrech)
